@@ -24,7 +24,7 @@ def api_error_message(status: int, detail: str = "") -> str:
 
 def get_api_key() -> str:
     """環境変数 GEMINI_API_KEY を返す。未設定なら手順を表示して終了する。"""
-    key = os.getenv("GEMINI_API_KEY")
+    key = os.getenv("GEMINI_API_KEY") or os.getenv("API_KEY_FOR_AIE")
     if not key:
         raise SystemExit(
             "環境変数 GEMINI_API_KEY が見つかりません。\n"

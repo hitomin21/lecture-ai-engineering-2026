@@ -11,7 +11,7 @@
   },
   // Codespaces 作成時に登録を促すシークレット
   "secrets": {
-    "GEMINI_API_KEY": {
+    "API_KEY_FOR_AIE": {
       "description": "Google AI Studio で発行した Gemini API キー",
       "documentationUrl": "https://aistudio.google.com/apikey"
     }

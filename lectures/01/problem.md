@@ -27,7 +27,7 @@
 
 GitHub の **Settings → Codespaces → Secrets → New secret** で次のように登録します。
 
-- Name: `GEMINI_API_KEY`
+- Name: `API_KEY_FOR_AIE`
 - Value: 手順2のキー
 - Repository access: **自分の fork** を選ぶ
 
@@ -57,9 +57,15 @@ uv run python -m app.ask "AIE2026の講座で使う「lecNN-start タグ」と�
 uv run python -m app.ask "AIE2026の第2回では何を学びますか？"
 ```
 
-### 6. Copilot でトークン数を表示させる
+続けて質問し、前のやりとりを踏まえた回答を試すには、対話モードを使います。終了するときは `/exit` と入力します。
 
-`app/ask.py` の `TODO(第1回 演習)` の場所で、入力トークン数と出力トークン数を表示するよう改修します。Copilot の補完やチャットを使ってかまいません。提案されたコードは、読んで理解してから採用してください。
+```bash
+uv run python -m app.ask --chat
+```
+
+### 6. 応答時間とトークン数を確認する
+
+質問ごとに応答時間と入力・出力・合計トークン数が表示されます。質問を変えたり、対話モードで追加の質問をしたりして、数値の違いを確認しましょう。対話モードでは、それまでの会話もモデルに送られるため、入力トークン数が増えることがあります。
 
 ### 7. ブランチを作って PR を出す
 
